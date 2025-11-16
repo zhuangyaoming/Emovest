@@ -1,0 +1,53 @@
+<div class="card strategy-card">
+    <div class="card-head" style="align-items:flex-start;">
+        <div>
+            <h3 class="card-title" style="margin-bottom:6px;color:#3b63ff;font-weight:700;">今日速览</h3>
+            <p class="card-meta" style="color:#8d9bba;font-size:12px;margin:0;">${new Date().toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' })} · 实时更新</p>
+        </div>
+    </div>
+    
+
+    
+    <div class="strategy-section" style="margin-top:18px;">
+        <h4 class="strategy-subtitle" style="margin:0 0 8px;font-size:15px;color:#ff6b35;font-weight:600;">💡 投资机会提示</h4>
+        <div class="strategy-desc markdown-content" style="margin:0 0 12px;font-size:13px;line-height:1.6;">
+            ${analysis ? (() => {
+                try {
+                    if (typeof marked !== 'undefined') {
+                        return marked.parse(analysis);
+                    }
+                } catch (e) {
+                    console.error('Markdown 渲染失败:', e);
+                }
+                return analysis.replace(/\n/g, '<br>');
+            })() : `
+            <div style="background:linear-gradient(135deg, rgba(59, 99, 255, 0.05), rgba(157, 78, 221, 0.05));padding:12px;border-radius:8px;border-left:3px solid #3b63ff;">
+                <p style="margin:0 0 8px 0;color:#4d5f82;"><strong>🔍 市场观察：</strong>今日科技板块表现活跃，AI相关概念股持续走强。</p>
+                <p style="margin:0 0 8px 0;color:#4d5f82;"><strong>🎯 关注领域：</strong>人工智能、新能源、半导体芯片</p>
+                <p style="margin:0;color:#4d5f82;"><strong>⚠️ 风险提示：</strong>注意短期回调风险，建议分批建仓</p>
+            </div>
+            `}
+        </div>
+    </div>
+    
+    <!-- 新增市场情绪指标 -->
+    <div class="strategy-section" style="margin-top:18px;">
+        <h4 class="strategy-subtitle" style="margin:0 0 8px;font-size:15px;color:#10b981;font-weight:600;">😊 市场情绪指数</h4>
+        <div style="display:flex;align-items:center;gap:12px;font-size:13px;">
+            <div style="flex:1;background:#e5e7eb;border-radius:10px;height:8px;overflow:hidden;">
+                <div style="width:72%;background:linear-gradient(90deg, #10b981, #34d399);height:100%;border-radius:10px;"></div>
+            </div>
+            <span style="color:#10b981;font-weight:600;">72% 乐观</span>
+        </div>
+    </div>
+    
+    <!-- 新增操作建议 -->
+    <div class="strategy-section" style="margin-top:18px;padding-top:12px;border-top:1px solid #f1f5f9;">
+        <h4 class="strategy-subtitle" style="margin:0 0 8px;font-size:15px;color:#f59e0b;font-weight:600;">⚡ 操作建议</h4>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:rgba(59, 99, 255, 0.1);color:#3b63ff;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:500;">适度加仓</span>
+            <span style="background:rgba(16, 185, 129, 0.1);color:#10b981;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:500;">长期持有</span>
+            <span style="background:rgba(245, 158, 11, 0.1);color:#f59e0b;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:500;">关注回调</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Emovest 智能投资助手</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- 引入 highlight.js 的 CSS 主题样式 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="/vendor/echarts.min.js"></script>
+    <!-- 引入 marked.js 和 highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+<div class="scene">
+    <div class="scene__orb orb-1"></div>
+    <div class="scene__orb orb-2"></div>
+    <div class="scene__orb orb-3"></div>
+</div>
+
+<div class="iphone-frame">
+    <div class="iphone-display">
+        <!-- 状态栏 -->
+        <div class="status-bar">
+            <div class="status-center">
+                <div class="dynamic-island">
+                    <span class="island-pill"></span>
+                    <span class="island-dot"></span>
+                </div>
+            </div>
+        </div>
+
+        <header class="screen-header">
+
+                <div class="header-top">
+                    <img src="Emovest0.png" alt="Emovest" class="header-logo">
+                    <p class="header-eyebrow">AI赋能投资<br>Emovest</p>
+                </div>
+                <div class="header-title-wrapper">
+                    <h1 id="pageTitle">首页</h1>
+                    <p class="header-desc">
+                    </p>
+                </div>
+
+            <button class="btn-ghost1" id="btnEmovest">
+                <span class="btn-icon">✨</span>
+                <span>Emovest</span>
+            </button>
+        </header>
+
+        <main class="screen-body">
+            <section id="view-home" class="view active"></section>
+            <section id="view-hotspot" class="view"></section>
+            <section id="view-strategy" class="view"></section>
+            <section id="view-account" class="view"></section>
+        </main>
+
+        <nav class="screen-dock" role="tablist">
+            <button class="dock-btn active" data-target="view-home" data-title="首页">
+                <span class="dock-icon">🏠</span>
+                <span>首页</span>
+            </button>
+            <button class="dock-btn" data-target="view-hotspot" data-title="热点">
+                <span class="dock-icon">🔥</span>
+                <span>热点</span>
+            </button>
+            <button class="dock-btn" data-target="view-strategy" data-title="策略">
+                <span class="dock-icon">🧭</span>
+                <span>策略</span>
+            </button>
+            <button class="dock-btn" data-target="view-account" data-title="我的">
+                <span class="dock-icon">👤</span>
+                <span>我的</span>
+            </button>
+        </nav>
+        
+        <!-- Home键 -->
+        <div class="home-indicator"></div>
+    </div>
+</div>
+
+<div class="chat-modal" id="chatModal" role="dialog" aria-modal="true" aria-labelledby="chatTitle">
+    <div class="chat-panel">
+        <header class="chat-header">
+            <div>
+                <p class="chat-eyebrow">Emovest AI Agent</p>
+                <h2 id="chatTitle">智能问答</h2>
+            </div>
+            <button class="chat-close" id="chatClose" aria-label="关闭对话">✕</button>
+        </header>
+        <div class="chat-messages" id="chatMessages"></div>
+        <form class="chat-entry" id="chatForm">
+            <input type="text" id="chatInput" placeholder="例如『解读一下煤炭行业』" autocomplete="off" required>
+            <button type="submit" class="btn-primary">发送</button>
+        </form>
+    </div>
+</div>
+
+<script src="assets/js/mock-workflows.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/home.js"></script>
+<script src="assets/js/hotspot.js"></script>
+<script src="assets/js/strategy.js"></script>
+<script src="assets/js/account.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

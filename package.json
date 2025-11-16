@@ -1,0 +1,30 @@
+{
+  "name": "emovest-ai-assistant",
+  "version": "1.0.0",
+  "description": "Emovest AI Assistant - 智能投资助手",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "emovest",
+    "ai",
+    "investment",
+    "assistant"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1"
+  }
+}
+
+
+
+
+
+
