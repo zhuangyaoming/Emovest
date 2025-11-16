@@ -98,7 +98,7 @@ cp .env.example .env
 
 3. 启动服务器：
   ```bash
-  node server.js
+  npm run dev
   ```
 
 4. 在浏览器中访问 `http://localhost:3000`
